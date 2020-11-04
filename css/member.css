@@ -320,8 +320,8 @@
 }
 
 .button-fill {
-  color: #24388d;
-  background-color: #fefefe;
+  color: var(--theme-primary);
+  background-color: var(--theme-bright3)
   margin-bottom: 15px;
   border: 0;
 }
