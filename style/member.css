@@ -30,7 +30,6 @@
 /* 공통 멤버 아이디 패스워드 입력 서식 */
 .member-id, .member-password{
   position: relative;
-  border-bottom: 1px solid currentColor;
   height: 48px;
 }
 .member-id{
@@ -44,19 +43,51 @@
   left: 0.5em;
   bottom: 0.5em;
   font-size: 1.8rem;
+  transition: all .2ms;
 }
 .member-id input, .member-password input{
   width: 100%;
-  height: 100%;
+  height: 48px;
   background: transparent;
   border: 0px solid rgba(255, 255, 255, 0.5);
   color: #fff;
   padding: 0 1em;
+  border-bottom: 1px solid currentColor;
 }
-.member-id--error, .member-password--error, .button-password{
+.member-id--error, .member-password--error{
   display: none;
 }
-/* 공통 이메일 저장 */
+.member-form .button-password{
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 15px;
+  right: 0px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+.is--focus .button-password{
+  display: block;
+}
+.button-password .ir {
+  display: block;
+  /* padding: 4px; */
+  width: inherit;
+  height: inherit;
+  background: url(../images/icon-visible.svg) no-repeat 50% 50%;
+}
+
+.member-form .is--visible .button-password .ir {
+  background-image: url(../images/icon-invisible.svg);
+}
+.member-form .is--visible .button-password {
+  right: 20px;
+  
+}
+/* 통 이메일 저장 */
 .save-email{
   position: relative;
   display: flex;
@@ -80,7 +111,7 @@
   background: url(../images/icon-un-checked-square.svg) no-repeat 0 0;
 }
 .save-email input:checked + .checkbox{
-  background-image: url(../images/icon-checked-square.svg) no-repeat 0 0;
+  background-image: url(../images/icon-checked-square.svg);
 }
 .save-email label{
   margin-left: 0.5em;
@@ -138,6 +169,39 @@
 .button-stroke::after {
   background-image: url(../images/icon-arrow-white.svg);
 }
+
+/* 공통 멤버 폼 상태 디자인  */
+.is--focus label,
+.is--valid label,
+.is--invalid label {
+  font-size: 1.3rem;
+  transform: translate(-0.5em, -15px);
+}
+
+.member-form .is--invalid{
+  width: auto;
+  /* background: yellow; */
+}
+.member-form .is--invalid [role="alert"]{
+  display: block;
+  margin-top: 5px;
+}
+.member-form .is--valid, .member-form .is--invalid{
+  background: url(../images/icon-checked.svg) no-repeat;
+  background-position: 100% 20px;
+}
+.member-form .is--valid{
+  background-image: url(../images/icon-checked.svg) no-repeat;
+}
+.member-form .is--invalid{
+  background-image: url(../images/icon-warning.svg) no-repeat;
+}
+.member-form .is--invalid:focus{
+  background-image:url(../images/icon-warning.svg) no-repeat;
+}
+/* .is--invalid > span{
+  display: block;
+} */
 
 @media all and (min-width: 768px){
   .member{
