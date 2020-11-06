@@ -1,0 +1,132 @@
+/* 공통 수상 내역 */
+.award-container {
+  background: var(--theme-bright2);
+  margin: 25px -10px -20px;
+  margin-top: 20px;
+  padding: 25px;
+}
+.news__award{
+  /* background-color: light;  */
+}
+.news__award__year{
+  background: var(--theme-bright2);
+  display: flex;
+  flex-flow: row nowrap;
+}
+.award-headline {
+  font-weight: 700;
+  color: #24388d;
+  margin: 0 25px 0 0;
+}
+.award-list {
+  flex-grow: 1;
+  border-left: 1px solid #c8cde2;
+  position: relative;
+}
+.award-list::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  transform: translateX(-50%);
+  background-color: var(--theme-primary);
+  border-radius: 50%;
+}
+.award-item {
+  margin-bottom: 20px;
+}
+.award-subject {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f0f0f;
+  position: relative;
+  list-style-type: none;
+  width: 100%;
+  padding: 5px 30px 5px 5px;
+  line-height: 1.5;
+}
+.award-subject::marker {
+  display: none;
+}
+
+.award-subject::-webkit-details-marker {
+  display: none;
+  color: transparent;
+}
+.award-subject::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url(../images/icon-arrow-down.svg) no-repeat 0 0 / 100% 100%;
+}
+details[open] .award-subject::after {
+  background-image: url(../images/icon-arrow-up.svg);
+}
+.award-subject b {
+  font-size: 12px;
+  font-weight: 400;
+  width: 25px;
+  display: inline-block;
+}
+.award-thumbnail {
+  margin-left: 30px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.award-thumbnail figcaption {
+  margin-top: 10px;
+}
+/* 수상내역 텍스트 (p 요소 - 내부에 span 요소와 time 요소가 포함 됨) */
+.award-item p {
+  margin-left: 30px;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* 수상날짜 (time 요소) */
+.award-date {
+  color: #5b6aa9;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+/* .news__award__year:first-child{
+  padding-top: 25px;
+} */
+/* .news__award__year:last-child{
+  padding-bottom: 20px;
+}
+.award-headline{
+  color: var(--theme-primary);
+}
+.award-item details{
+  background: var(--theme-bright2);
+}
+.award-list{
+  padding-left: 40px;
+  padding-top: 20px;
+}
+.award-list::before{
+  
+} */
+.award-list{
+  border-left: 1px solid var(--theme-primary);
+  margin-left: 15px;
+}
+@media all and (min-width: 768px){
+  /* 데스크탑 수상내역 */
+  .news__award{
+    width: 740px;
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+  .award-container{
+    margin: 0 -15px;
+  }
+  .
+}
